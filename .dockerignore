@@ -1,0 +1,34 @@
+# Files to ignore when building Docker images
+
+node_modules/
+package-lock.json
+npm-debug.log*
+*.tar.gz
+*.zip
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed in test containers)
+*.md
+!ic-wasm*/bin/README.md
+
+# Scripts
+scripts/
+
+# CI/CD
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+test-output/

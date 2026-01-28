@@ -1,0 +1,62 @@
+name: Version Bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to bump to (e.g., v0.9.11-beta.2)'
+        required: true
+        type: string
+
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      
+      - name: Download binaries
+        run: |
+          ./scripts/download-binaries.sh "${{ github.event.inputs.version }}"
+      
+      - name: Verify binaries
+        run: |
+          ./scripts/verify-binaries.sh
+      
+      - name: Update package.json files
+        run: |
+          ./scripts/update-package-json.sh "${{ github.event.inputs.version }}"
+      
+      - name: Run Docker tests
+        run: |
+          ./scripts/test-docker.sh full
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: bump version to ${{ github.event.inputs.version }}"
+          branch: version-bump/${{ github.event.inputs.version }}
+          delete-branch: true
+          title: "chore: bump version to ${{ github.event.inputs.version }}"
+          body: |
+            ## Version Bump to ${{ github.event.inputs.version }}
+            
+            This PR updates all packages to version `${{ github.event.inputs.version }}`.
+            
+            ### Changes
+            - Downloaded binaries for version ${{ github.event.inputs.version }}
+            - Verified all platform binaries
+            - Updated package.json files with new version
