@@ -48,16 +48,11 @@ This will update the version in all packages and their dependencies.
 
 ### 5. Publish to npm
 
-First, make sure you're logged in to npm:
+Publishing is automated via GitHub Actions. Push a version tag to trigger the publish workflow:
 
 ```bash
-npm login
-```
-
-Then publish all packages:
-
-```bash
-./scripts/publish-all.sh 0.9.11
+git tag v0.9.11
+git push origin v0.9.11
 ```
 
 **Important:** Platform packages must be published before the main package!
