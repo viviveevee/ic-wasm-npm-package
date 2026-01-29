@@ -13,11 +13,11 @@ function findBinary() {
 
   // Map Node.js platform/arch to package names
   const platformMap = {
-    'darwin-arm64': '@vivee_dfn/ic-wasm-darwin-arm64',
-    'darwin-x64': '@vivee_dfn/ic-wasm-darwin-x64',
-    'linux-arm64': '@vivee_dfn/ic-wasm-linux-arm64',
-    'linux-x64': '@vivee_dfn/ic-wasm-linux-x64',
-    'win32-x64': '@vivee_dfn/ic-wasm-win32-x64'
+    'darwin-arm64': 'ic-wasm-darwin-arm64',
+    'darwin-x64': 'ic-wasm-darwin-x64',
+    'linux-arm64': 'ic-wasm-linux-arm64',
+    'linux-x64': 'ic-wasm-linux-x64',
+    'win32-x64': 'ic-wasm-win32-x64'
   };
 
   const key = `${platform}-${arch}`;

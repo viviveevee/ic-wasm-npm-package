@@ -1,10 +1,10 @@
 {
-  "name": "@vivee_dfn/ic-wasm-win32-x64",
+  "name": "ic-wasm-win32-x64",
   "version": "0.9.11",
   "description": "ic-wasm binary for Windows x64",
   "repository": {
     "type": "git",
-    "url": "https://github.com/viviveevee/ic-wasm-npm-package.git",
+    "url": "https://github.com/dfinity/ic-wasm-npm-package.git",
     "directory": "ic-wasm-win32-x64"
   },
   "license": "Apache-2.0",

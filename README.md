@@ -1,4 +1,4 @@
-# @vivee_dfn/ic-wasm npm Package
+# ic-wasm npm Package
 
 This repository contains the npm package distribution system for `ic-wasm` using the **bundled binaries per-architecture** approach.
 
@@ -10,8 +10,8 @@ This repository contains the npm package distribution system for `ic-wasm` using
 
 ## How It Works
 
-1. **Platform-specific packages** (`@vivee_dfn/ic-wasm-darwin-arm64`, etc.) each contain a pre-compiled binary for their respective platform
-2. **Main package** (`@vivee_dfn/ic-wasm`) uses `optionalDependencies` to automatically install only the correct platform package
+1. **Platform-specific packages** (`ic-wasm-darwin-arm64`, etc.) each contain a pre-compiled binary for their respective platform
+2. **Main package** (`ic-wasm`) uses `optionalDependencies` to automatically install only the correct platform package
 3. **Wrapper script** (`ic-wasm/bin/ic-wasm.js`) finds and executes the platform-specific binary
 
 ## Quick Start
@@ -67,13 +67,13 @@ Then publish all packages:
 Users can install the package globally:
 
 ```bash
-npm install -g @vivee_dfn/ic-wasm
+npm install -g ic-wasm
 ```
 
 Or locally in their project:
 
 ```bash
-npm install @vivee_dfn/ic-wasm
+npm install ic-wasm
 ```
 
 Then use it:
@@ -85,7 +85,7 @@ ic-wasm --help
 Or programmatically:
 
 ```javascript
-const icWasm = require('@vivee_dfn/ic-wasm');
+const icWasm = require('ic-wasm');
 console.log('Binary location:', icWasm.binaryPath);
 ```
 
