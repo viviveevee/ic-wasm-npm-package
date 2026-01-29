@@ -75,7 +75,7 @@ echo ""
 for platform in "${PLATFORMS[@]}"; do
   echo "Publishing $platform..."
   cd "$platform"
-  npm publish --access public $BETA_TAG
+  npm publish --access public --provenance $BETA_TAG
   cd ..
   echo "✓ $platform published"
 done
@@ -83,7 +83,7 @@ done
 # Publish main package
 echo "Publishing main package ic-wasm..."
 cd ic-wasm
-npm publish --access public $BETA_TAG
+npm publish --access public --provenance $BETA_TAG
 cd ..
 echo "✓ ic-wasm published"
 

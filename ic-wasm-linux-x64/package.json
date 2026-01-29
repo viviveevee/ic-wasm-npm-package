@@ -1,10 +1,10 @@
 {
-  "name": "@vivee_dfn/ic-wasm-linux-x64",
+  "name": "ic-wasm-linux-x64",
   "version": "0.9.11",
   "description": "ic-wasm binary for Linux x64",
   "repository": {
     "type": "git",
-    "url": "https://github.com/viviveevee/ic-wasm-npm-package.git",
+    "url": "https://github.com/dfinity/ic-wasm-npm-package.git",
     "directory": "ic-wasm-linux-x64"
   },
   "license": "Apache-2.0",

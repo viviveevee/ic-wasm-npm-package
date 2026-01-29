@@ -1,17 +1,17 @@
-# @vivee_dfn/ic-wasm
+# ic-wasm
 
 npm package for [ic-wasm](https://github.com/dfinity/ic-wasm) with pre-compiled binaries.
 
 ## Installation
 
 ```bash
-npm install -g @vivee_dfn/ic-wasm
+npm install -g ic-wasm
 ```
 
 Or add to your project:
 
 ```bash
-npm install --save-dev @vivee_dfn/ic-wasm
+npm install --save-dev ic-wasm
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ This package uses platform-specific optional dependencies to install the correct
 ### Programmatic Usage
 
 ```javascript
-const icWasm = require('@vivee_dfn/ic-wasm');
+const icWasm = require('ic-wasm');
 
 console.log('ic-wasm binary location:', icWasm.binaryPath);
 console.log('ic-wasm version:', icWasm.version);
